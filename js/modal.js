@@ -13,7 +13,7 @@ class ModalGaleria {
         this.indiceActual = 0;
 
         this.init();
-    }
+    } 
 
     init() {
         if (!this.overlay) return;
