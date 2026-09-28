@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería Modal</title>
+    <link rel="stylesheet" href="css/modal.css">
+</head>
+<body>
+
+    <h1> Nueva York</h1>
+    <p>Presiona el botón para abrir la galería:</p>
+    
+    <button class="boton" id="btnAbrirGaleria">Ver Galería de Fotos</button>
+
+    <div class="cortina-negra" id="modalGaleria">
+        <div class="cortina-blanca">
+            
+            <span class="botoncerrar" id="btnCerrarGaleria">&times;</span> 
+
+            <h2>Mi Colección de Fotos</h2>
+            
+            <!--  carrusel de fotos -->
+            <div class="visor-imagen">
+                <button id="btnAnterior" class="btn-nav">&lt;</button>
+                <img id="imagenActual" src="https://picsum.photos/id/1015/600/400" alt="Fotografía">
+                <button id="btnSiguiente" class="btn-nav">&gt;</button>
+            </div>
+
+            <!-- Contador de imágenes -->
+            <p id="textoContador" class="texto-contador">Imagen 1 de 3</p>
+
+        </div>
+    </div>
+
+    <script src="js/modal.js"></script>
+</body>
+</html>
