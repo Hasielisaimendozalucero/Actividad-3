@@ -1,17 +1,14 @@
 class ModalGaleria {
     constructor(idOverlay, idBtnAbrir, idBtnCerrar, listaImagenes) {
-        // Guardamos los elementos del DOM
         this.overlay = document.getElementById(idOverlay);
         this.btnAbrir = document.getElementById(idBtnAbrir);
         this.btnCerrar = document.getElementById(idBtnCerrar);
 
-        // Elementos de la Galería
         this.imgElement = document.getElementById('imagenActual');
         this.btnAnterior = document.getElementById('btnAnterior');
         this.btnSiguiente = document.getElementById('btnSiguiente');
         this.textoContador = document.getElementById('textoContador');
 
-        // Arreglo de fotos e índice actual
         this.imagenes = listaImagenes;
         this.indiceActual = 0;
 
@@ -21,24 +18,20 @@ class ModalGaleria {
     init() {
         if (!this.overlay) return;
 
-        // Abrir Modal
         if (this.btnAbrir) {
             this.btnAbrir.addEventListener('click', () => this.abrir());
         }
 
-        // Cerrar Modal con X
         if (this.btnCerrar) {
             this.btnCerrar.addEventListener('click', () => this.cerrar());
         }
 
-        // Clic en el fondo oscuro
         this.overlay.addEventListener('click', (event) => {
             if (event.target === this.overlay) {
                 this.cerrar();
             }
         });
 
-        // Navegación de imágenes
         if (this.btnAnterior && this.btnSiguiente) {
             this.btnAnterior.addEventListener('click', () => this.anteriorImagen());
             this.btnSiguiente.addEventListener('click', () => this.siguienteImagen());
@@ -74,9 +67,8 @@ class ModalGaleria {
     }
 }
 
-// Inicialización
 document.addEventListener('DOMContentLoaded', () => {
-    // Lista de fotos que se mostrarán en el carrusel
+    //  fotos
     const misFotos = [
         'img/times.jpg',
         'img/night.jpg',
@@ -86,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     ];
 
-    // Instanciamos con 'new'
+   
     const miGaleria = new ModalGaleria(
         'modalGaleria',
         'btnAbrirGaleria',
